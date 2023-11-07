@@ -2,14 +2,17 @@ package com.example.androidmusicapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androidmusicapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val fragmentA: MainFragment = MainFragment()
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainerView, fragmentA).commit();
+        supportFragmentManager.beginTransaction().run{
+            replace(binding.fragmentContainerView.id, MyListFragment(/*Value*/))
+            commit()
+        }// R.layout.id.fragmentContainerView와 차이?
     }
 }

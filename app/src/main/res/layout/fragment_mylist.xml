@@ -4,15 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainFragment" >
+    tools:context=".MyListFragment" >
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="254dp"
-        android:layout_height="169dp"
-        android:gravity="center"
-        android:text="프래그먼트A"
-        android:textAlignment="center"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_music"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

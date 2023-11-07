@@ -2,4 +2,8 @@
     <string name="app_name">AndroidMusicApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="myspace">MySpace</string>
+    <string name="title">Title</string>
+    <string name="singer">Singer</string>
+    <string name="cD">Text</string>
 </resources>
