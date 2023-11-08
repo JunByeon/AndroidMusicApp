@@ -12,7 +12,10 @@ class MainActivity : AppCompatActivity() {
 
         supportFragmentManager.beginTransaction().run{
             replace(binding.fragmentContainerView.id, MyListFragment(/*Value*/))
+            replace(binding.fragmentContainerView.id, SearchFragment(/*x*/))
             commit()
         }// R.layout.id.fragmentContainerView와 차이?
     }
+
+
 }
