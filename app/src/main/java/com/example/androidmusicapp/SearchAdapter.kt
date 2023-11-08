@@ -20,7 +20,7 @@ class SearchAdapter(val searchlist: Array<Search>) : RecyclerView.Adapter<Search
 
     class Holder(private val binding: ListMusicBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(searchlist: Search){
-            binding.imageView.setImageResource(R.drawable.rollback)
+            binding.imageView.setImageResource(R.drawable.sample)
             binding.txtTitle.text = searchlist.title
         }
 
