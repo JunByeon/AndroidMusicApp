@@ -19,13 +19,22 @@ class MusicAdapter(val musiclist: Array<Music>) : RecyclerView.Adapter<MusicAdap
     }
 
     class Holder(private val binding: ListMusicBinding) : RecyclerView.ViewHolder(binding.root){
+        /*
         fun bind(musiclist: Music){
             //binding.imageView.setImageResource(R.drawable.곡에 맞는 이미지)
             binding.imageView.setImageResource(R.drawable.sample)
             binding.txtTitle.text = musiclist.title
             binding.txtSinger.text = musiclist.singer
         }
-
+         */
+        fun bind(musiclist : Music){
+            binding.run{
+                //imageView.setImageResource(R.drawable.곡에 맞는 이미지)
+                imageView.setImageResource((R.drawable.sample))
+                txtTitle.text = musiclist.title
+                txtSinger.text = musiclist.singer
+            }
+        }
     }
 
 }
