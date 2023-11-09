@@ -23,36 +23,28 @@ class MyListFragment : Fragment() {
         Music("Crosses", "Jose Gonzalez"),
         Music("Mt.Washington", "Local Natives")
     )// sample List.
-
+    lateinit var binding: FragmentMylistBinding
+    /*
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-    }
+    } onCreate remains for later Update.
+    */
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?)
     : View? {
-        /*
-        val binding =  FragmentMylistBinding.inflate(inflater, container, false)
+        binding =  FragmentMylistBinding.inflate(inflater, container, false)
         return binding.root
-         */
-        return FragmentMylistBinding.inflate(inflater, container, false).root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val musicAdapter = MusicAdapter(musiclist)
-        val musicRecycler : RecyclerView = view.findViewById(R.id.rec_music)
-        musicRecycler.run{
-            adapter = musicAdapter
+        binding.recMusic.run{
+            adapter = MusicAdapter(musiclist)
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(activity) // what does context mean?
+            layoutManager = LinearLayoutManager(activity)
         }
-        /*
-        musicRecycler.adapter = musicAdapter
-        musicRecycler.layoutManager = LinearLayoutManager(activity)
-        musicRecycler.setHasFixedSize(true)
-         */
     }
 }

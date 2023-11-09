@@ -14,6 +14,6 @@ class MainActivity : AppCompatActivity() {
             replace(binding.fragmentContainerView.id, MyListFragment())
             //replace(binding.fragmentContainerView.id, SearchFragment(/*x*/))
             commit()
-        }// R.layout.id.fragmentContainerView와 차이?
+        }
     }
 }
