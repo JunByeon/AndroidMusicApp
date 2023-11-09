@@ -23,7 +23,6 @@ class SearchAdapter(val searchlist: Array<Search>) : RecyclerView.Adapter<Search
             binding.imageView.setImageResource(R.drawable.sample)
             binding.txtTitle.text = searchlist.title
         }
-
     }
 
 }

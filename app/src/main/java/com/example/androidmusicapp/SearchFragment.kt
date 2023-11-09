@@ -14,20 +14,12 @@ class SearchFragment : Fragment() {
         // Assuming Search is a data class that you have defined elsewhere
         Search("Paris In The Rain"),
         Search("Paris In The Rain"),
-
         Search("Paris In The Rain"),
-
         Search("Paris In The Rain"),
-
         Search("Paris In The Rain"),
-
         Search("Paris In The Rain"),
-
         Search("Paris In The Rain"),
-
         Search("Paris In The Rain")
-
-
     )
 
     override fun onCreateView(
