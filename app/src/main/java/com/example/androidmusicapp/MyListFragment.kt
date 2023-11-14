@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidmusicapp.databinding.FragmentMylistBinding
 
 
 class MyListFragment : Fragment() {
+    /*
     val musiclist = arrayOf(
         Music("Don't Look Back In Anger" , "Oasis"),
         Music("Creep", "RadioHead"),
@@ -23,12 +26,10 @@ class MyListFragment : Fragment() {
         Music("Crosses", "Jose Gonzalez"),
         Music("Mt.Washington", "Local Natives")
     )// sample List.
+     */
+
     lateinit var binding: FragmentMylistBinding
-    /*
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    } onCreate remains for later Update.
-    */
+    val viewModel : MusicViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +42,7 @@ class MyListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        viewModel.sample.observe(viewLifecycleOwner)
         binding.recMusic.run{
             adapter = MusicAdapter(musiclist)
             setHasFixedSize(true)
