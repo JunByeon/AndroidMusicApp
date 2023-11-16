@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidmusicapp.databinding.ListMusicBinding
 
-class MusicAdapter(val musiclist: Array<Music>) : RecyclerView.Adapter<MusicAdapter.Holder>() {
+class MyListAdapter(val musiclist: Array<Music>) : RecyclerView.Adapter<MyListAdapter.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ListMusicBinding.inflate(LayoutInflater.from(parent.context))
@@ -21,7 +21,6 @@ class MusicAdapter(val musiclist: Array<Music>) : RecyclerView.Adapter<MusicAdap
     class Holder(private val binding: ListMusicBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(musiclist : Music){
             binding.run{
-                //imageView.setImageResource(R.drawable.곡에 맞는 이미지)
                 imageView.setImageResource((R.drawable.sample))
                 txtTitle.text = musiclist.title
                 txtSinger.text = musiclist.singer

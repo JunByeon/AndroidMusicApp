@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.androidmusicapp.MainFragment"
-        android:label="fragment_entry"
+        android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
             android:id="@+id/action_entryFragment_to_myListFragment"
@@ -26,5 +26,13 @@
         <action
             android:id="@+id/action_entryFragment_to_searchFragment"
             app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_chartFragment"
+            app:destination="@id/chartFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/chartFragment"
+        android:name="com.example.androidmusicapp.ChartFragment"
+        android:label="fragment_chart"
+        tools:layout="@layout/fragment_chart" />
 </navigation>

@@ -5,13 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.androidmusicapp.databinding.FragmentMylistBinding
+import androidx.recyclerview.widget.RecyclerView
+import com.example.androidmusicapp.databinding.FragmentChartBinding
 
-
-class MyListFragment : Fragment() {
-    val musiclist = arrayOf(
+class ChartFragment : Fragment() {
+    val latestChartlist = arrayOf(
         Music("Don't Look Back In Anger" , "Oasis"),
         Music("Creep", "RadioHead"),
         Music("My Religion", "Troy Baker"),
@@ -23,25 +22,24 @@ class MyListFragment : Fragment() {
         Music("Crosses", "Jose Gonzalez"),
         Music("Mt.Washington", "Local Natives")
     )// sample List
-    lateinit var binding: FragmentMylistBinding
-    val viewModel : MusicViewModel by activityViewModels()
-
+    lateinit var binding : FragmentChartBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?)
-    : View? {
-        binding =  FragmentMylistBinding.inflate(inflater, container, false)
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentChartBinding.inflate(inflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //viewModel.sample.observe(viewLifecycleOwner)
-        binding.recMusic.run{
-            adapter = MyListAdapter(musiclist)
+        binding.recLatest.run{
+            adapter = LatestChartAdapter(latestChartlist)
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(activity)
+            layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
+
         }
     }
+
 }
