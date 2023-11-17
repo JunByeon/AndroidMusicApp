@@ -40,7 +40,6 @@ class MyListFragment : Fragment() {
         //viewModel.sample.observe(viewLifecycleOwner)
         binding.recMusic.run{
             adapter = MyListAdapter(musiclist)
-            setHasFixedSize(true)
             layoutManager = LinearLayoutManager(activity)
         }
     }

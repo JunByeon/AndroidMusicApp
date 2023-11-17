@@ -22,8 +22,8 @@ class LatestChartAdapter(val latestChartlist: Array<Music>)
         fun bind(latestChartlist : Music){
             binding.run{
                 imgMusic.setImageResource(R.drawable.sample)
-                txtTitle2.text = latestChartlist.title
-                txtSinger2.text = latestChartlist.singer
+                txtTitle.text = latestChartlist.title
+                txtSinger.text = latestChartlist.singer
             }
         }
     }

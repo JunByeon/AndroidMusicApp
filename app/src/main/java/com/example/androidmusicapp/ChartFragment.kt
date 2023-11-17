@@ -22,6 +22,30 @@ class ChartFragment : Fragment() {
         Music("Crosses", "Jose Gonzalez"),
         Music("Mt.Washington", "Local Natives")
     )// sample List
+
+    val popularlist = arrayOf(
+        Chart("A" , "Oasis", "1"),
+        Chart("Don't Look Back In Anger" , "Oasis", "2"),
+        Chart("Don't Look Back In Anger" , "Oasis", "3"),
+        Chart("Don't Look Back In Anger" , "Oasis", "4"),
+        Chart("Don't Look Back In Anger" , "Oasis", "5"),
+        Chart("Don't Look Back In Anger" , "Oasis", "6"),
+        Chart("Don't Look Back In Anger" , "Oasis", "7"),
+        Chart("Don't Look Back In Anger" , "Oasis", "8"),
+        Chart("Don't Look Back In Anger" , "Oasis", "9"),
+        Chart("Don't Look Back In Anger" , "Oasis", "10"),
+        Chart("Don't Look Back In Anger" , "Oasis", "11"),
+        Chart("Don't Look Back In Anger" , "Oasis", "12"),
+        Chart("Don't Look Back In Anger" , "Oasis", "13"),
+        Chart("Don't Look Back In Anger" , "Oasis", "14"),
+        Chart("Don't Look Back In Anger" , "Oasis", "15"),
+        Chart("Don't Look Back In Anger" , "Oasis", "16"),
+        Chart("Don't Look Back In Anger" , "Oasis", "17"),
+        Chart("Don't Look Back In Anger" , "Oasis", "18"),
+        Chart("Don't Look Back In Anger" , "Oasis", "19"),
+        Chart("Don't Look Back In Anger" , "Oasis", "20")
+    )// sample List
+
     lateinit var binding : FragmentChartBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,10 +60,15 @@ class ChartFragment : Fragment() {
 
         binding.recLatest.run{
             adapter = LatestChartAdapter(latestChartlist)
-            setHasFixedSize(true)
             layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
 
         }
+
+        binding.recPopular.run{
+            adapter = PopularAdapter(popularlist)
+            layoutManager = LinearLayoutManager(activity)
+        }
+
     }
 
 }
