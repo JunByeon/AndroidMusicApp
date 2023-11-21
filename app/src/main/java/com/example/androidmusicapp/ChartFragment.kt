@@ -61,7 +61,6 @@ class ChartFragment : Fragment() {
         binding.recLatest.run{
             adapter = LatestChartAdapter(latestChartlist)
             layoutManager = LinearLayoutManager(activity, RecyclerView.HORIZONTAL, false)
-
         }
 
         binding.recPopular.run{

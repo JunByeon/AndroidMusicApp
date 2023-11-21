@@ -2,13 +2,13 @@ package com.example.androidmusicapp
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.androidmusicapp.databinding.ListMusicBinding
-import com.example.androidmusicapp.databinding.ListPopularBinding
+import com.example.androidmusicapp.databinding.ListLinearRankedBinding
 
 class PopularAdapter (val popularlist: Array<Chart>) : RecyclerView.Adapter<PopularAdapter.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding = ListPopularBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = ListLinearRankedBinding.inflate(LayoutInflater.from(parent.context))
         return Holder(binding)
     }
 
@@ -18,13 +18,21 @@ class PopularAdapter (val popularlist: Array<Chart>) : RecyclerView.Adapter<Popu
         holder.bind(popularlist[position])
     }
 
-    class Holder(private val binding: ListPopularBinding) : RecyclerView.ViewHolder(binding.root){
+    class Holder(private val binding: ListLinearRankedBinding) : RecyclerView.ViewHolder(binding.root){
         fun bind(popularlist : Chart){
             binding.run{
                 imgElbum.setImageResource((R.drawable.sample))
                 txtTitlePopular.text = popularlist.title
                 txtSingerPopular.text = popularlist.singer
                 txtRate.text = popularlist.rate
+            }
+
+            binding.root.setOnClickListener{
+                Toast.makeText(
+                    binding.root.context,
+                    "${popularlist.title} - ${popularlist.singer}, ${popularlist.rate}위",
+                    Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }

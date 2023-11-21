@@ -6,33 +6,47 @@
     app:startDestination="@id/mainFragment">
 
     <fragment
-        android:id="@+id/myListFragment"
-        android:name="com.example.androidmusicapp.MyListFragment"
-        android:label="fragment_mylist"
-        tools:layout="@layout/fragment_mylist" />
-    <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.androidmusicapp.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
-    <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.androidmusicapp.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
-            android:id="@+id/action_entryFragment_to_myListFragment"
-            app:destination="@id/myListFragment" />
-        <action
-            android:id="@+id/action_entryFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
             android:id="@+id/action_mainFragment_to_chartFragment"
             app:destination="@id/chartFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_myPlayListFragment"
+            app:destination="@id/myPlayListFragment" />
     </fragment>
     <fragment
         android:id="@+id/chartFragment"
         android:name="com.example.androidmusicapp.ChartFragment"
         android:label="fragment_chart"
         tools:layout="@layout/fragment_chart" />
+    <fragment
+        android:id="@+id/myPlayListFragment"
+        android:name="com.example.androidmusicapp.MyPlayListFragment"
+        android:label="fragment_my_play_list"
+        tools:layout="@layout/fragment_my_play_list" >
+        <action
+            android:id="@+id/action_myPlayListFragment_to_myListFragment"
+            app:destination="@id/myListFragment" />
+        <action
+            android:id="@+id/action_myPlayListFragment_self"
+            app:destination="@id/myPlayListFragment"
+            app:popUpTo="@id/myPlayListFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.androidmusicapp.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/myListFragment"
+        android:name="com.example.androidmusicapp.MyListFragment"
+        android:label="fragment_mylist"
+        tools:layout="@layout/fragment_mylist" />
 </navigation>
