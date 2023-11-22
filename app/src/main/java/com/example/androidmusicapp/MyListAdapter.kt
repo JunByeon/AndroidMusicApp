@@ -26,6 +26,13 @@ class MyListAdapter(val musiclist: Array<Music>) : RecyclerView.Adapter<MyListAd
                 txtTitle.text = musiclist.title
                 txtSinger.text = musiclist.singer
             }
+            binding.root.setOnClickListener{
+                Toast.makeText(
+                    binding.root.context,
+                    "${musiclist.title} - ${musiclist.singer} 가 재생됩니다!",
+                    Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
     }
 }

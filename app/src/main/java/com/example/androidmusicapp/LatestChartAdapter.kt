@@ -3,6 +3,7 @@ package com.example.androidmusicapp
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidmusicapp.databinding.ListHorizontalBinding
 
@@ -27,11 +28,7 @@ class LatestChartAdapter(val latestChartlist: Array<Music>)
                 txtSinger.text = latestChartlist.singer
             }
             binding.root.setOnClickListener{
-                Toast.makeText(
-                    binding.root.context,
-                    "${latestChartlist.title} - ${latestChartlist.singer}",
-                    Toast.LENGTH_SHORT)
-                    .show()
+                it.findNavController().navigate(R.id.action_chartFragment_to_myListFragment)
             }
         }
 

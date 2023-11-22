@@ -24,7 +24,14 @@
         android:id="@+id/chartFragment"
         android:name="com.example.androidmusicapp.ChartFragment"
         android:label="fragment_chart"
-        tools:layout="@layout/fragment_chart" />
+        tools:layout="@layout/fragment_chart" >
+        <action
+            android:id="@+id/action_chartFragment_to_myListFragment"
+            app:destination="@id/myListFragment" />
+        <action
+            android:id="@+id/action_chartFragment_to_myPlayListFragment"
+            app:destination="@id/myPlayListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myPlayListFragment"
         android:name="com.example.androidmusicapp.MyPlayListFragment"

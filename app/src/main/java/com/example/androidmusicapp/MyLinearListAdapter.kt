@@ -25,8 +25,8 @@ class MyLinearListAdapter (val albumlist: Array<Music>) : RecyclerView.Adapter<M
             fun bind(albumlist: Music) {
                 binding.run {
                     imgLinearAlbum.setImageResource((R.drawable.sample))
-                    txtSingerAlbum.text = albumlist.title
-                    txtTitleAlbum.text = albumlist.singer
+                    txtTitleAlbum.text = albumlist.title
+                    txtSingerAlbum.text = albumlist.singer
                 }
                 binding.root.setOnClickListener {
                     it.findNavController()

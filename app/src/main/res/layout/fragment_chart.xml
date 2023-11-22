@@ -19,30 +19,31 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btn_latest"
-                android:layout_width="400dp"
+            <TextView
+                android:id="@+id/txt_latest"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:text="새 앨범 및 음악"
-                android:layout_gravity="center"/>
+                android:layout_margin="8dp"
+                android:layout_marginStart = "4dp"
+                android:text="새 앨범 및 싱글"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_latest"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/btn_popular"
-                android:layout_width="400dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="64dp"
-                android:layout_marginEnd="16dp"
-                android:text="인기" />
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/txt_popular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginStart = "4dp"
+                android:text="인기곡"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_popular"
