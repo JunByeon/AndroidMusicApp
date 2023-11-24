@@ -28,9 +28,6 @@
         <action
             android:id="@+id/action_chartFragment_to_myListFragment"
             app:destination="@id/myListFragment" />
-        <action
-            android:id="@+id/action_chartFragment_to_myPlayListFragment"
-            app:destination="@id/myPlayListFragment" />
     </fragment>
     <fragment
         android:id="@+id/myPlayListFragment"
